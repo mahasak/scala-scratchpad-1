@@ -1,3 +1,4 @@
+package learning;
 
 object CollectionTypes {
 

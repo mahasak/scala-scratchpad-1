@@ -1,3 +1,4 @@
+package learning;
 object LoopsAndControl {
   def main(args: Array[String]): Unit = {
     Console.println(fiftyFifty())

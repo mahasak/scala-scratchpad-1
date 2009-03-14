@@ -1,3 +1,4 @@
+package learning;
 object Timer {
   def oncePerSecond(callback: () => Unit ): Unit = {
     while(true) {
