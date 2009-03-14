@@ -1,5 +1,8 @@
 package learning;
 
+/**
+ * Spot the magic properties
+ */
 class Miscelany(val number: Int, val text: String) {
   // Overloaded constructor
   def this(number: Int) = this(number, "default")

@@ -1,28 +1,42 @@
 package learning
-
-abstract class Outcome {
-  val EVIL: String = "Evil"
-  val NEUTRAL: String = "Neutral"
-  val VIRTUOUS: String = "Virtuous"
-}
+class Outcome {}
 
 class Wrong extends Outcome {
-  def +(that: Wrong): String = EVIL
-  def +(that: Right): String = NEUTRAL
+  def +(that: Outcome): Outcome = {
+    if (that.isInstanceOf[Right]) 
+      new Hmmm
+    else 
+      this
+  }
 }
 
 class Right extends Outcome {
-  def +(that: Wrong): String = NEUTRAL
-  def +(that: Right): String = VIRTUOUS
+  def +(that: Outcome): Outcome = {
+    if (that.isInstanceOf[Wrong]) 
+      new Hmmm
+    else 
+      this
+  }
+}
+
+class Hmmm extends Outcome {
+  def +(that: Outcome): Outcome = that
 }
 
 object OperatorOverloading {
   def main(args: Array[String]): Unit = {
     val wrong = new Wrong
     val right = new Right
-    assert ((wrong + new Wrong).equals(wrong.EVIL))
-    assert ((wrong + new Right).equals(right.NEUTRAL))
-    assert ((right + new Wrong).equals(right.NEUTRAL))
-    assert ((right + new Right).equals(right.VIRTUOUS))
+    val hmmm = new Hmmm
+    
+    assert ((wrong + wrong).isInstanceOf[Wrong] )
+    assert ((wrong + right).isInstanceOf[Hmmm])
+    assert ((wrong + hmmm).isInstanceOf[Wrong])
+    assert ((right + wrong).isInstanceOf[Hmmm])
+    assert ((right + right).isInstanceOf[Right])
+    assert ((right + hmmm).isInstanceOf[Right])
+    assert ((hmmm + wrong).isInstanceOf[Wrong])
+    assert ((hmmm + right).isInstanceOf[Right])
+    assert ((hmmm + hmmm).isInstanceOf[Hmmm])
   }
 }
