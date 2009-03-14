@@ -8,6 +8,7 @@ class Wrong extends Outcome {
     else 
       this
   }
+  override def equals(other: Any): Boolean = isInstanceOf[Wrong]
 }
 
 class Right extends Outcome {
@@ -17,10 +18,12 @@ class Right extends Outcome {
     else 
       this
   }
+  override def equals(other: Any): Boolean = isInstanceOf[Right]
 }
 
 class Hmmm extends Outcome {
   def +(that: Outcome): Outcome = that
+  override def equals(other: Any): Boolean = isInstanceOf[Hmmm]
 }
 
 object OperatorOverloading {
@@ -29,14 +32,14 @@ object OperatorOverloading {
     val right = new Right
     val hmmm = new Hmmm
     
-    assert ((wrong + wrong).isInstanceOf[Wrong] )
-    assert ((wrong + right).isInstanceOf[Hmmm])
-    assert ((wrong + hmmm).isInstanceOf[Wrong])
-    assert ((right + wrong).isInstanceOf[Hmmm])
-    assert ((right + right).isInstanceOf[Right])
-    assert ((right + hmmm).isInstanceOf[Right])
-    assert ((hmmm + wrong).isInstanceOf[Wrong])
-    assert ((hmmm + right).isInstanceOf[Right])
-    assert ((hmmm + hmmm).isInstanceOf[Hmmm])
+    assert ((wrong + wrong) == wrong)
+    assert ((wrong + right) == hmmm)
+    assert ((wrong + hmmm) == wrong)
+    assert ((right + wrong) == hmmm)
+    assert ((right + right) == right)
+    assert ((right + hmmm) == right)
+    assert ((hmmm + wrong) == wrong)
+    assert ((hmmm + right) == right)
+    assert ((hmmm + hmmm) == hmmm)
   }
 }
