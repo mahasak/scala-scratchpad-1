@@ -12,6 +12,9 @@ object LoopsAndControl {
     // returns a boolean
     for (val i <- 1 to 30; logIt(i); i%10 == 0)
       Console.println(i + " fits!")
+    
+    
+    filesHere()
   }
   
   def logIt(i: Int): Boolean = {
@@ -36,5 +39,15 @@ object LoopsAndControl {
       }
 
     fiftyFifty
+  }
+  
+  def filesHere(): Unit = {
+    val filesHere = (new java.io.File("main/learning")).listFiles()
+    
+    // Note the use of a block and no ';'
+    for {
+      file <- filesHere
+      if (file.getName().startsWith("Operator"))
+    } Console.println(file.getName())
   }
 }
