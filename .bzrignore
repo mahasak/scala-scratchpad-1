@@ -1,5 +1,9 @@
 bin
 .manager
 dist
+<<<<<<< TREE
 build/classes
 build/test
+=======
+build
+>>>>>>> MERGE-SOURCE
