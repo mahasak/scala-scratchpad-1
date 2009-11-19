@@ -1,4 +1,4 @@
-#Sat Mar 14 16:11:41 GMT 2009
+#Thu Nov 19 19:09:41 GMT 2009
 <file>=false
 Xcheck-null=false
 Xcheckinit=false
@@ -8,6 +8,7 @@ Xfuture=false
 Xlog-implicits=false
 Xno-uescape=false
 Xno-varargs-conversion=false
+Xstrict-warnings=false
 Xwarninit=false
 Yclosure-elim=false
 Ydead-code=false
@@ -18,11 +19,18 @@ Yno-generic-signatures=false
 Yno-imports=false
 Yno-predefs=false
 Yself-in-annots=false
+Yspecialize=false
+Ysqueeze=on
+Ytailrecommend=false
+Ywarn-catches=false
 Ywarn-dead-code=false
+Ywarn-shadowing=false
 dependencyfile=.scala_dependencies
+deprecation=false
 eclipse.preferences.version=1
 g=vars
 make=all
 optimise=false
 scala.compiler.useProjectSettings=false
 target=jvm-1.5
+unchecked=false
