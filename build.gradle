@@ -21,7 +21,7 @@ dependencies {
     testCompile 'junit:junit:4.6'
 }
 
-task scalatest << {
+task spec << {
     ant.taskdef(name: 'scalatest', classname: 'org.scalatest.tools.ScalaTestAntTask', classpath: configurations.testCompile.asPath)
     ant.scalatest() {
       runpath {
@@ -29,8 +29,7 @@ task scalatest << {
          pathelement(path: 'build/classes/test')
          pathelement(path: 'build/classes/main')
       }
-      //suite(classname: 'GivenWhenThenStackSpec')
-      //Ignore junit.framework.TestSuite
-      membersonly(package: 'example')
+      wildcard(package: 'example')
     }
 }
+spec.dependsOn compileTestScala

@@ -1,4 +1,5 @@
-package example;
+package example
+
 import org.scalatest.FunSuite
 import org.scalatest.matchers._
 import scala.collection.mutable.Stack
