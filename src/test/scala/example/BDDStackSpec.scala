@@ -1,8 +1,12 @@
+package example;
 import org.scalatest.Spec
-import org.scalatest.matchers.ShouldMatchers
+import org.scalatest.matchers._
 import scala.collection.mutable.Stack
+import org.junit.runner.RunWith
+import org.scalatest.junit.JUnitRunner
 
-class StackSpec extends Spec with ShouldMatchers {
+@RunWith(classOf[JUnitRunner])
+class BDDStackSpec extends Spec with ShouldMatchers {
 
   describe("A Stack") {
 

@@ -18,4 +18,19 @@ dependencies {
     compile "org.scala-lang:scala-library:$scalaVersion"
 
     testCompile 'org.scalatest:scalatest:1.0'
+    testCompile 'junit:junit:4.6'
+}
+
+task scalatest << {
+    ant.taskdef(name: 'scalatest', classname: 'org.scalatest.tools.ScalaTestAntTask', classpath: configurations.testCompile.asPath)
+    ant.scalatest() {
+      runpath {
+         pathelement(path: configurations.testRuntime.asPath)
+         pathelement(path: 'build/classes/test')
+         pathelement(path: 'build/classes/main')
+      }
+      //suite(classname: 'GivenWhenThenStackSpec')
+      //Ignore junit.framework.TestSuite
+      membersonly(package: 'example')
+    }
 }

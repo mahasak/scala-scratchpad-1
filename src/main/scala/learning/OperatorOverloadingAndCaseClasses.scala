@@ -34,7 +34,7 @@ object OperatorOverloadingAndCaseClasses {
     val wrong = Wrong
     val right = Right
     val hmmm = Hmmm
-    
+
     assert ((wrong + wrong) == Wrong)
     assert ((wrong + right) == Hmmm)
     assert ((wrong + hmmm) == Wrong)
