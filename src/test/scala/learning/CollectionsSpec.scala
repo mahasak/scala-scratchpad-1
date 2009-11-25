@@ -10,10 +10,16 @@ import org.scalatest.junit.JUnitRunner
 class CollectionsSpec extends Spec with ShouldMatchers {
     describe("Using Lists") {
       val emptyList = List()
-      it("is possible to concatenate Lists using the infix operator '::'") {
+      it("is possible to build Lists using the infix operator '::'") {
         (1 :: emptyList) should be (List(1))
         (2 :: 1 :: emptyList) should be (List(2,1))
         emptyList should be ('empty)
+      }
+    }
+    describe("Examining Lists") {
+      val emptyList = List()
+      it("should expose a length property") {
+        pending
       }
     }
 }
