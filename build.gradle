@@ -29,7 +29,7 @@ task spec << {
          pathelement(path: 'build/classes/test')
          pathelement(path: 'build/classes/main')
       }
-      wildcard(package: 'example')
+      //wildcard(package: 'example')
       wildcard(package: 'learning')
     }
 }
