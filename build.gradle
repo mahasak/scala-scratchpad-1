@@ -30,6 +30,7 @@ task spec << {
          pathelement(path: 'build/classes/main')
       }
       wildcard(package: 'example')
+      wildcard(package: 'learning')
     }
 }
 spec.dependsOn compileTestScala
