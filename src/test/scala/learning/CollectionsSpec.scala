@@ -7,11 +7,13 @@ import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
 
 @RunWith(classOf[JUnitRunner])
-class MySpec extends Spec with ShouldMatchers {
+class CollectionsSpec extends Spec with ShouldMatchers {
     describe("Using Lists") {
-      //Setup
-      it("") {
-        pending
+      val emptyList = List()
+      it("is possible to concatenate Lists using the infix operator '::'") {
+        (1 :: emptyList) should be (List(1))
+        (2 :: 1 :: emptyList) should be (List(2,1))
+        emptyList should be ('empty)
       }
     }
 }
