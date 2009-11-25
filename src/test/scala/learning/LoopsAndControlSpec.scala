@@ -7,7 +7,7 @@ import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
 
 @RunWith(classOf[JUnitRunner])
-class MySpec extends Spec with ShouldMatchers {
+class LoopsAndControlSpec extends Spec with ShouldMatchers {
      describe("") {
       //Setup
       it("") {
