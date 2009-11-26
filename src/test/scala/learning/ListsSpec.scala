@@ -37,4 +37,25 @@ class ListsSpec extends Spec with ShouldMatchers {
         emptyList should be ('empty)
       }
     }
+    describe("Doing things with Lists") {
+      val list = List(1,2,3,4,5,6)
+      it("is possible to get the size") {list.length should be (6)}
+      it("using count with a function to match") {list.count(i => i > 2) should be (4)}
+      it("using drop to get part of the list") {list.drop(2) should be (List(3,4,5,6))}
+      it("using dropRight to get part of the list") {list.dropRight(2) should be (List(1,2,3,4))}
+      it("using exists with a function to check contents") {list.exists(i => i == 2) should be (true)}
+      it("using filter with a function to get some contents") {list.filter(i => i > 2) should be (List(3,4,5,6))}
+      it("using forall with a function to check contents") {list.forall(i => i < 7) should be (true)}
+      it("using foreach with a function to do something with each element") {var result = ""; list.foreach(i => result +=i); result should be ("123456")}
+      it("using head to get the first element") {list.head should be (1)}
+      it("using last to get the last element") {list.last should be (6)}
+      it("using init to get all but the last element") {list.init should be (List(1,2,3,4,5))}
+      it("using tail to get all but the first element") {list.tail should be (List(2,3,4,5,6))}
+      it("using isEmpty") {list.isEmpty should be (false)}
+      it("using map with a function to create a new List") {list.map(i => i + 1) should be (List(2,3,4,5,6,7))}
+      it("using mkString with a function to create a String") {list.mkString("-") should be ("1-2-3-4-5-6")}
+      it("using remove with a function to create a sub List") {list.remove(i => i%3 != 0) should be (List(3,6))}
+      it("using reverse to create a new List") {list.reverse should be (List(6,5,4,3,2,1))}
+      it("using sort with a function to create a new List") {list.sort((a,b) => a > b) should be (List(6,5,4,3,2,1))}
+    }
 }
