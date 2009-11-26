@@ -7,15 +7,7 @@ import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
 
 @RunWith(classOf[JUnitRunner])
-class CollectionsSpec extends Spec with ShouldMatchers {
-    describe("Using Lists") {
-      val emptyList = List()
-      it("is possible to build Lists using the infix operator '::'") {
-        (1 :: emptyList) should be (List(1))
-        (2 :: 1 :: emptyList) should be (List(2,1))
-        emptyList should be ('empty)
-      }
-    }
+class ArraysSpec extends Spec with ShouldMatchers {
     describe("Initialising empty Array of Ints") {
       val arr = new Array[Int](3)
       it("will be filled with default Ints") {
@@ -30,7 +22,7 @@ class CollectionsSpec extends Spec with ShouldMatchers {
           arr(2) should be (3)
       }
     }
-    describe("Accessing Arrays") {
+    describe("Accessing and updating Arrays") {
       val arr1 = Array(1,2,3)
       val arr2 = new Array[String](3)
       it("uses 'apply' method calls to read") {
