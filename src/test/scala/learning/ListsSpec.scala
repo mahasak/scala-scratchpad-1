@@ -57,5 +57,6 @@ class ListsSpec extends Spec with ShouldMatchers {
       it("using remove with a function to create a sub List") {list.remove(i => i%3 != 0) should be (List(3,6))}
       it("using reverse to create a new List") {list.reverse should be (List(6,5,4,3,2,1))}
       it("using sort with a function to create a new List") {list.sort((a,b) => a > b) should be (List(6,5,4,3,2,1))}
+      it("using reduceLeft with a function to compare the contents") {list.reduceLeft((a,b) => if (a < b) a else b) should be (1)}
     }
 }
