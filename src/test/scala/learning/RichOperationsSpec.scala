@@ -15,9 +15,10 @@ class RichOperationsSpec extends Spec with ShouldMatchers {
         (-42 abs) should be (42)
         (3.1415 round) should be (3)
 //        (1 to 5) should be (Range(1,2,3,4,5))
+        (1 to 5).length should be (5)
         ((1.0/0) isInfinity) should be (true)
         ("tony baines" capitalize) should be ("Tony baines")
-//        "12345" drop 3 should be ("45")
+        ("12345" drop 3).toString should be ("45")
       }
     }
 }
