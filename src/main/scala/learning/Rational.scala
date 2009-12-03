@@ -6,12 +6,30 @@ class Rational(val num: Int, val denom: Int) {
     val n = num / gcd
     val d = denom / gcd
 
-    override def toString() = {n+"/"+d}
+    def this(num: Int) = {this(num,1)}
+
+    override def toString() = {
+      n + (if (d>1) ("/" + d) else "")
+    }
     override def equals(other: Any) = {
       other match {
         case that: Rational => this.n == that.n && this.d == that.d
         case _ => false
       }
+    }
+    override def hashCode = {this.n*this.d}
+
+    def /(other: Rational) = {
+        new Rational((this.n*other.d), ((this.d*other.n)))
+    }
+    def *(other: Rational) = {
+        new Rational((this.n*other.n), ((this.d*other.d)))
+    }
+    def +(other: Rational) = {
+      new Rational(((this.n*other.d)+(other.n*this.d)), (this.d*other.d))
+    }
+    def -(other: Rational) = {
+        new Rational(((this.n*other.d)-(other.n*this.d)), (this.d*other.d))
     }
 
     private def greatestCommonDenominator(a: Int, b: Int): Int = {
