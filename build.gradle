@@ -2,11 +2,13 @@ usePlugin 'scala'
 usePlugin 'eclipse'
 usePlugin 'project-reports'
 
-//scalaVersion = '2.8.0.Beta1-RC1'
-scalaVersion = '2.7.7'
+//scalaVersion = '2.7.7'
+scalaVersion = '2.8.0.Beta1-RC1'
+scalatestVersion = '1.0.1-for-scala-2.8.0.Beta1-RC1-SNAPSHOT'
 
 repositories {
     mavenRepo urls: "http://scala-tools.org/repo-releases"
+    mavenRepo urls: "http://scala-tools.org/repo-snapshots"
 }
 
 dependencies {
@@ -17,7 +19,7 @@ dependencies {
     // Libraries needed for scala api
     compile "org.scala-lang:scala-library:$scalaVersion"
 
-    testCompile 'org.scalatest:scalatest:1.0'
+    testCompile "org.scalatest:scalatest:$scalatestVersion"
     testCompile 'junit:junit:4.6'
 }
 
@@ -29,7 +31,6 @@ task spec << {
          pathelement(path: 'build/classes/test')
          pathelement(path: 'build/classes/main')
       }
-      //wildcard(package: 'example')
       wildcard(package: 'learning')
     }
 }
