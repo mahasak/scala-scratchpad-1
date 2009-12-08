@@ -30,16 +30,26 @@ class ControlStructuresSpec extends Spec with ShouldMatchers {
         result should be (6)
       }
       it("'for' loops can be used to iterate over ranges") {
-          var result = 0
-          for (i <- 1 to 3) result += i
-          result should be (6)
+        var result = 0
+        for (i <- 1 to 3) result += i
+        result should be (6)
       }
       it("'for' loops can be used with one or more filter clauses") {
-          var result = 0
-          for (i <- 1 to 3; if (i>1); if (i<3)) {
-               result += i
-          }
-          result should be (2)
+        var result = 0
+        for (i <- 1 to 3; if (i>1); if (i<3)) {
+          result += i
+        }
+        result should be (2)
+      }
+      it("'for' loops can include multiple generators") {
+        var result = 0
+        val data = List(1 to 3, 1 to 3)
+        for (i <- data; j <- i) result += j
+        result should be (12)
+      }
+      it("'for' loops can use 'yield' before the body to return a new collection") {
+        // The 'body' of the loop is the expression 'i' here
+        (for {i <- 1 to 3} yield i) should be (List(1,2,3))
       }
     }
 }
