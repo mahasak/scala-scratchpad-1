@@ -8,7 +8,7 @@ import org.scalatest.junit.JUnitRunner
 
 @RunWith(classOf[JUnitRunner])
 class ControlStructuresSpec extends Spec with ShouldMatchers {
-    describe("Scala has a smallset of control structures") {
+    describe("Scala has a small set of control structures") {
       it("'if' blocks return a value") {
         val result =
           if (1>2) true else false
@@ -50,6 +50,12 @@ class ControlStructuresSpec extends Spec with ShouldMatchers {
       it("'for' loops can use 'yield' before the body to return a new collection") {
         // The 'body' of the loop is the expression 'i' here
         (for {i <- 1 to 3} yield i) should be (List(1,2,3))
+      }
+      it("'match' expressions break by default (no fall through)") {
+        ("Hello" match {
+            case "Hello" => true
+            case _ => false
+        }) should be (true)
       }
     }
 }
