@@ -2,7 +2,6 @@ usePlugin 'scala'
 usePlugin 'eclipse'
 usePlugin 'project-reports'
 
-//scalaVersion = '2.7.7'
 scalaVersion = '2.8.0.Beta1-RC1'
 scalatestVersion = '1.0.1-for-scala-2.8.0.Beta1-RC1-SNAPSHOT'
 
@@ -12,11 +11,8 @@ repositories {
 }
 
 dependencies {
-    // Libraries needed to run the scala tools
     scalaTools "org.scala-lang:scala-compiler:$scalaVersion"
     scalaTools "org.scala-lang:scala-library:$scalaVersion"
-
-    // Libraries needed for scala api
     compile "org.scala-lang:scala-library:$scalaVersion"
 
     testCompile "org.scalatest:scalatest:$scalatestVersion"
@@ -24,6 +20,11 @@ dependencies {
 }
 
 task spec << {
+    runSpecs('learning')
+}
+spec.dependsOn compileTestScala
+
+def runSpecs(packageName) {
     ant.taskdef(name: 'scalatest', classname: 'org.scalatest.tools.ScalaTestAntTask', classpath: configurations.testCompile.asPath)
     ant.scalatest() {
       runpath {
@@ -31,7 +32,6 @@ task spec << {
          pathelement(path: 'build/classes/test')
          pathelement(path: 'build/classes/main')
       }
-      wildcard(package: 'learning')
+      wildcard(package: packageName)
     }
 }
-spec.dependsOn compileTestScala
