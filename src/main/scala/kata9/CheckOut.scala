@@ -1,14 +1,28 @@
 package kata9
 
-class CheckOut(val rules: Map[String, (Int, String)]) {
+class CheckOut {
+    var rules: List[(List[String] => Int)] = Nil
     var items = List[String]()
+
+    def countItems(item: String, items: List[String]) = items.filter(i => i == item).length
+    def costItems(item: String, items: List[String], cost: Int) = countItems(item, items) * cost
+
+    def this(ruleDefs: Map[String, (Int, String)]) = {
+        this()
+        ruleDefs.keysIterator.foreach { item =>
+          val cost = ruleDefs(item)._1
+          val costOfItems = costItems(item, _: List[String], cost)
+          rules = costOfItems :: rules
+        }
+    }
+
     def scan(item: String) = {
         items = item :: items
     }
     def total(): Int = {
-        def priceOf(item: String) = if (rules.contains(item)) rules(item)._1 else 0
-        // Transform to a list of prices, then add them
-        (items map (priceOf(_))).sum
+        var totalCost = 0
+        rules.foreach ( costOfItems => totalCost += costOfItems(items) )
+        totalCost
     }
 
 }

@@ -20,6 +20,8 @@ class CheckOutSpec extends Spec with ShouldMatchers {
       it("should add the cost of each item scanned") {
         co.scan("A")
         co.total() should be (50)
+        co.scan("A")
+        co.total() should be (100)
       }
     }
 }
