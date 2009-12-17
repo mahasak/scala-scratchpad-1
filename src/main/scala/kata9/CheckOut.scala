@@ -20,21 +20,14 @@ class CheckOut {
 
     def this(ruleDefs: Map[String, (Int, String)]) = {
         this()
-        ruleDefs.keysIterator.foreach { item =>
+        rules = ruleDefs.keysIterator.map { item =>
           val cost = ruleDefs(item)._1
           val deal = ruleDefs(item)._2
-          val costOfItems = costItems(item, _: List[String], cost, deal)
-          rules = costOfItems :: rules
-        }
+          costItems(item, _: List[String], cost, deal)
+        }.toList
     }
 
-    def scan(item: String) = {
-        items = item :: items
-    }
-    def total(): Int = {
-        var totalCost = 0
-        rules.foreach ( costOfItems => totalCost += costOfItems(items) )
-        totalCost
-    }
+    def scan(item: String) = items = item :: items
+    def total() = rules.map( costOfItems => costOfItems(items) ).sum
 
 }
