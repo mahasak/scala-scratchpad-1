@@ -18,6 +18,10 @@ dependencies {
     testCompile "org.scalatest:scalatest:$scalatestVersion"
     testCompile 'junit:junit:4.6'
 }
+task kata9 << {
+    runSpecs('kata9')
+}
+kata9.dependsOn compileTestScala
 
 task spec << {
     runSpecs('learning')

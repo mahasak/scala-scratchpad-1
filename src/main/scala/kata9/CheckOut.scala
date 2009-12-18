@@ -17,14 +17,17 @@ class CheckOut {
 
         (numBasic * basicCost)+(numBundles * discountPrice)
     }
-
-    def this(ruleDefs: Map[String, (Int, String)]) = {
-        this()
-        rules = ruleDefs.keysIterator.map { item =>
+    private def buildRules(ruleDefs: Map[String, (Int, String)]) = {
+        ruleDefs.keysIterator.map { item =>
           val cost = ruleDefs(item)._1
           val deal = ruleDefs(item)._2
           costItems(item, _: List[String], cost, deal)
         }.toList
+    }
+
+    def this(ruleDefs: Map[String, (Int, String)]) = {
+        this()
+        rules = buildRules(ruleDefs)
     }
 
     def scan(item: String) = items = item :: items
