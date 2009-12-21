@@ -2,11 +2,12 @@ usePlugin 'scala'
 usePlugin 'eclipse'
 usePlugin 'project-reports'
 
-scalaVersion = '2.8.0.Beta1-RC1'
-scalatestVersion = '1.0.1-for-scala-2.8.0.Beta1-RC1-SNAPSHOT'
+scalaVersion = '2.8.0.Beta1-RC3'
+scalatestVersion = '1.0.1-for-scala-2.8.0.Beta1-RC3-with-test-interfaces-0.2-SNAPSHOT'
 
 repositories {
-    mavenRepo urls: "http://scala-tools.org/repo-releases"
+//    mavenRepo urls: "https://collaborate.bt.com/artefacts/content/groups/public"
+//    mavenRepo urls: "http://scala-tools.org/repo-releases"
     mavenRepo urls: "http://scala-tools.org/repo-snapshots"
 }
 
