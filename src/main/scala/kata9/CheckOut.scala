@@ -18,7 +18,7 @@ class CheckOut {
         (numBasic * basicCost)+(numBundles * discountPrice)
     }
     private def buildRules(ruleDefs: Map[String, (Int, String)]) = {
-        ruleDefs.keysIterator.map { item =>
+        ruleDefs.keys.map { item =>
           val cost = ruleDefs(item)._1
           val deal = ruleDefs(item)._2
           costItems(item, _: List[String], cost, deal)
@@ -31,6 +31,10 @@ class CheckOut {
     }
 
     def scan(item: String) = items = item :: items
-    def total() = rules.map( costOfItems => costOfItems(items) ).sum
+    def total(): Int = {
+      var totalCost = 0;
+      rules.map( costOfItems => costOfItems(items) ).foreach(c => totalCost += c)
+      totalCost
+    }
 
 }

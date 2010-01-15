@@ -37,6 +37,7 @@ class ListsSpec extends Spec with ShouldMatchers {
         emptyList should be ('empty)
       }
     }
+    
     describe("Doing things with Lists") {
       val list = List(1,2,3,4,5,6)
       it("is possible to get the size") {list.length should be (6)}
@@ -54,9 +55,9 @@ class ListsSpec extends Spec with ShouldMatchers {
       it("using isEmpty") {list.isEmpty should be (false)}
       it("using map with a function to create a new List") {list.map(i => i + 1) should be (List(2,3,4,5,6,7))}
       it("using mkString with a function to create a String") {list.mkString("-") should be ("1-2-3-4-5-6")}
-      it("using remove with a function to create a sub List") {list.filterNot(i => i%3 != 0) should be (List(3,6))}
+      // 2.8 it("using remove with a function to create a sub List") {list.filterNot(i => i%3 != 0) should be (List(3,6))}
       it("using reverse to create a new List") {list.reverse should be (List(6,5,4,3,2,1))}
-      it("using sort with a function to create a new List") {list.sortWith((a,b) => a > b) should be (List(6,5,4,3,2,1))}
+      // 2.8 it("using sort with a function to create a new List") {list.sortWith((a,b) => a > b) should be (List(6,5,4,3,2,1))}
       it("using reduceLeft with a function to compare the contents") {list.reduceLeft((a,b) => if (a < b) a else b) should be (1)}
     }
 }
