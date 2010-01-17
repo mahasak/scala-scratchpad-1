@@ -1,16 +1,18 @@
 package haystack
 
 
-class Haystack {
+class Haystack(S: String) {
 
-  def needlesIn(S: String, W: String): List[Int] = {
+  def needles(W: String): List[Int] = {
     var pos = -1
     var matches = List[Int]()
+    val T = buildTable(W)
     do {
-      pos = findMatch(S, W, pos+1)
+      pos = findMatch(W, T, pos+1)
       matches = pos :: matches
     } while (pos < S.length)
 
+    // Trim off the last (false) match and put into the correct order
     matches.tail.reverse
   }
 
@@ -42,10 +44,9 @@ class Haystack {
     return the length of S
 
  */
-  def findMatch(S: String, W: String, start: Int): Int = {
+  def findMatch(W: String, T: Array[Int], start: Int): Int = {
     var m = start
     var i = 0
-    val T = buildTable(W)
     while ((m + i) < S.length) {
         if (W.charAt(i) == S.charAt(m + i)) {
             i += 1
@@ -89,22 +90,25 @@ class Haystack {
   def buildTable(W: String): Array[Int] = {
     var T = new Array[Int](W.length)
     T(0) = -1
-    T(1) = 0
-    var pos = 2
-    var cnd = 0
+    // Single-character words are a special case
+    if (W.length > 1) {
+        T(1) = 0
+        var pos = 2
+        var cnd = 0
 
-    while (pos < W.length) {
-      if (W.charAt(pos -1) == W.charAt(cnd)) {
-        T(pos) = cnd+1
-        pos += 1; cnd += 1
-      }
-      else if (cnd > 0) {
-        cnd = T(cnd)
-      }
-      else {
-        T(pos) = 0
-        pos += 1
-      }
+        while (pos < W.length) {
+          if (W.charAt(pos -1) == W.charAt(cnd)) {
+            T(pos) = cnd+1
+            pos += 1; cnd += 1
+          }
+          else if (cnd > 0) {
+            cnd = T(cnd)
+          }
+          else {
+            T(pos) = 0
+            pos += 1
+          }
+        }
     }
     return T
   }
