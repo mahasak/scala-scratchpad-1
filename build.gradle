@@ -24,6 +24,11 @@ task kata9 << {
 }
 kata9.dependsOn compileTestScala
 
+task haystack << {
+    runSpecs('haystack')
+}
+haystack.dependsOn compileTestScala
+
 task spec << {
     runSpecs('learning')
 }

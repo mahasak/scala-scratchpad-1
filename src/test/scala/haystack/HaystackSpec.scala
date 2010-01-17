@@ -12,21 +12,23 @@ class HaystackSpec extends FeatureSpec with GivenWhenThen with ShouldMatchers {
     scenario("Finding a needle") {
       given("an containing needle and haystack")
       when("the search happens")
-        val matches = haystack.needlesIn((2, "na", "banananobano"))
+        val matches = haystack.needlesIn("banananobano", "na")
       then("the (zero-based) index of the matches should be printed in ascending order")
         matches should be(List(2, 4))
     }
+    
     scenario("Finding no needles") {
       given("an containing needle and haystack")
       when("the search happens")
-        val matches = haystack.needlesIn((6, "foobar", "foo"))
+        val matches = haystack.needlesIn("foo", "foobar")
       then("the (zero-based) index of the matches should be printed in ascending order")
         matches should be(List())
     }
+    
     scenario("Finding more needles") {
       given("an containing needle and haystack")
       when("the search happens")
-        val matches = haystack.needlesIn((9, "foobarfoo", "barfoobarfoobarfoobarfoobarfoo"))
+        val matches = haystack.needlesIn("barfoobarfoobarfoobarfoobarfoo", "foobarfoo")
       then("the (zero-based) index of the matches should be printed in ascending order")
         matches should be(List(3,9,15,21))
     }
