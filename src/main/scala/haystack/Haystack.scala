@@ -16,7 +16,7 @@ class Haystack(S: String) {
     matches.tail.reverse
   }
 
-  /*
+  /**
   http://en.wikipedia.org/wiki/KMP_algorithm
   algorithm kmp_search:
     input:
@@ -61,7 +61,7 @@ class Haystack(S: String) {
   }
 
   
-  /*
+  /**
   algorithm kmp_table:
     input:
         an array of characters, W (the word to be analyzed)
