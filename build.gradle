@@ -5,6 +5,10 @@ usePlugin 'project-reports'
 scalaVersion = '2.7.7'
 scalatestVersion = '1.0'
 
+// Use the Scala fsc daemon to improve compile times
+compileScala.scalaCompileOptions.useCompileDaemon=true
+compileTestScala.scalaCompileOptions.useCompileDaemon=true
+
 repositories {
 //    mavenRepo urls: "https://collaborate.bt.com/artefacts/content/groups/public"
     mavenRepo urls: "http://scala-tools.org/repo-releases"
@@ -19,6 +23,10 @@ dependencies {
     testCompile "org.scalatest:scalatest:$scalatestVersion"
     testCompile 'junit:junit:4.6'
 }
+task calc << {
+    runSpecs('calc')
+}
+calc.dependsOn compileTestScala
 task kata9 << {
     runSpecs('kata9')
 }
