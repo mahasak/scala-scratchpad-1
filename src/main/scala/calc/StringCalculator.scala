@@ -18,7 +18,7 @@ class StringCalculator {
       case s: Some[String] => extractPrefix(numbers)
       case _ => ""     
     }  
-
-    (0 /: numbers.split("""[,\n\\$extraPrefix]+"""))((t, n) => t + n.safeToInt)
+    // Fold-left operator
+    (0 /: numbers.split("""[,\n\$extraPrefix]+"""))((t, n) => t + n.safeToInt)
   }
 }

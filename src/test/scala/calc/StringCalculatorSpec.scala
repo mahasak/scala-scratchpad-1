@@ -31,6 +31,8 @@ class StringCalculatorSpec extends Spec with ShouldMatchers {
     }
 
     describe("when given a string specifying a new default delimiter on the first line") {
+      it("should return 11 when ';' is specified and 1 & 10 are separated by ','") { calc.add("//;\n1,10") should be (11) }
+      it("should return 11 when ';' is specified and 1 & 10 are separated by '\\n'") { calc.add("//;\n1\n10") should be (11) }
       it("should return 11 when ';' is specified and 1 & 10 are separated by ';'") { calc.add("//;\n1;10") should be (11) }
     }
   }
