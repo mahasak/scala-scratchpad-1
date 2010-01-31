@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager" verified="true">
     <list default="true" readonly="true" id="0d88db18-c643-46d1-a1d1-c8d2977ca051" name="Default" comment="" />
-    <ignored path="ScalaScratchpad.iws" />
     <ignored path=".idea/workspace.xml" />
+    <ignored path="ScalaScratchpad.iws" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,28 +114,19 @@
   <component name="FileColors" enabled="true" enabledForTabs="true" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="HaystackSpec.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/scala/haystack/HaystackSpec.scala">
+      <file leaf-file-name="StringCalculatorSpec.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/scala/calc/StringCalculatorSpec.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="6" selection-start="228" selection-end="228" vertical-scroll-proportion="0.0">
+            <state line="18" column="19" selection-start="684" selection-end="684" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Haystack.scala" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/haystack/Haystack.scala">
+      <file leaf-file-name="StringCalculator.scala" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/calc/StringCalculator.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="15" selection-start="251" selection-end="251" vertical-scroll-proportion="0.3649635">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ListsSpec.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/scala/learning/ListsSpec.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="6" selection-start="233" selection-end="233" vertical-scroll-proportion="0.0">
+            <state line="10" column="19" selection-start="246" selection-end="246" vertical-scroll-proportion="0.3504673">
               <folding />
             </state>
           </provider>
@@ -156,6 +147,8 @@
         <option value="$PROJECT_DIR$/src/test/scala/learning/ControlStructuresSpec.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/haystack/HaystackSpec.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/haystack/Haystack.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/calc/StringCalculatorSpec.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/calc/StringCalculator.scala" />
       </list>
     </option>
   </component>
@@ -197,89 +190,6 @@
       <pane id="Scope">
         <subPane subId="Problems" />
       </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ScalaScratchpad" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ScalaScratchpad" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewLibrariesNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ScalaScratchpad" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ScalaScratchpad" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scala" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ScalaScratchpad" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ScalaScratchpad" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scala" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="runtime" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ScalaScratchpad" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ScalaScratchpad" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ScalaScratchpad" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ScalaScratchpad" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="haystack" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Favorites" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -304,6 +214,10 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Favorites" />
+      <pane id="PackagesPane">
+        <subPane />
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -312,7 +226,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="org.emergent.bzr4j.intellij.BzrIdeConfigurable" />
+    <property name="options.lastSelected" value="preferences.keymap" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="MemberChooser.copyJavadoc" value="false" />
@@ -320,9 +234,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="Regex">
     <option name="pos1" value="218" />
@@ -335,18 +249,7 @@
     <option name="referencePos" value="0" />
     <option name="showLabels" value="true" />
   </component>
-  <component name="RunManager" selected="ScalaTest.HaystackSpec">
-    <configuration default="false" name="Acceptence" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
-      <module name="ScalaScratchpad" />
-      <setting name="path" value="kata9.Acceptence" />
-      <setting name="package" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="version" value="false" />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="ScalaTest.StringCalculatorSpec">
     <configuration default="false" name="learning" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
       <module name="ScalaScratchpad" />
       <setting name="path" value="" />
@@ -383,6 +286,17 @@
     <configuration default="false" name="HaystackSpec" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
       <module name="ScalaScratchpad" />
       <setting name="path" value="haystack.HaystackSpec" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="version" value="false" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="StringCalculatorSpec" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
+      <module name="ScalaScratchpad" />
+      <setting name="path" value="calc.StringCalculatorSpec" />
       <setting name="package" value="" />
       <setting name="vmparams" value="" />
       <setting name="params" value="" />
@@ -547,11 +461,11 @@
       </method>
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="ScalaTest.Acceptence" />
-      <item index="1" class="java.lang.String" itemvalue="ScalaTest.learning" />
-      <item index="2" class="java.lang.String" itemvalue="ScalaTest.ControlStructuresSpec" />
-      <item index="3" class="java.lang.String" itemvalue="ScalaTest.kata9" />
-      <item index="4" class="java.lang.String" itemvalue="ScalaTest.HaystackSpec" />
+      <item index="0" class="java.lang.String" itemvalue="ScalaTest.learning" />
+      <item index="1" class="java.lang.String" itemvalue="ScalaTest.ControlStructuresSpec" />
+      <item index="2" class="java.lang.String" itemvalue="ScalaTest.kata9" />
+      <item index="3" class="java.lang.String" itemvalue="ScalaTest.HaystackSpec" />
+      <item index="4" class="java.lang.String" itemvalue="ScalaTest.StringCalculatorSpec" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -619,7 +533,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32911393" sideWeight="0.56017506" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298913" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32911393" sideWeight="0.65645516" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32911393" sideWeight="0.65645516" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297561" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Regex" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -685,21 +599,35 @@
         <state line="9" column="6" selection-start="233" selection-end="233" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/scala/learning/ListsSpec.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="6" selection-start="233" selection-end="233" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/scala/haystack/HaystackSpec.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="6" selection-start="228" selection-end="228" vertical-scroll-proportion="0.0">
+        <state line="8" column="6" selection-start="228" selection-end="228" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/learning/ListsSpec.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="6" selection-start="233" selection-end="233" vertical-scroll-proportion="0.03649635">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/haystack/Haystack.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="15" selection-start="251" selection-end="251" vertical-scroll-proportion="0.3649635">
+        <state line="31" column="44" selection-start="871" selection-end="871" vertical-scroll-proportion="0.729927">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/calc/StringCalculatorSpec.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="19" selection-start="684" selection-end="684" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/calc/StringCalculator.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="19" selection-start="246" selection-end="246" vertical-scroll-proportion="0.3504673">
           <folding />
         </state>
       </provider>

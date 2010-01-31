@@ -44,7 +44,7 @@ spec.dependsOn compileTestScala
 
 def runSpecs(packageName) {
     ant.taskdef(name: 'scalatest', classname: 'org.scalatest.tools.ScalaTestAntTask', classpath: configurations.testCompile.asPath)
-    ant.scalatest() {
+    ant.scalatest(parallel: true) {
       runpath {
          pathelement(path: configurations.testRuntime.asPath)
          pathelement(path: 'build/classes/test')
