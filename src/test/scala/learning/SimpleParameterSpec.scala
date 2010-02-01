@@ -14,7 +14,7 @@ class SimpleParameterSpec extends Spec with ShouldMatchers {
       it("should be populated and immutable") {
         person.firstName should be ("Tony")
         person.lastName  should be ("Baines")
-        // person.firstName = "Bob"           "compile fails with error:reassignment to val"
+        // person.firstName = "Bob"           compile fails with "error:reassignment to val"
       }
     }
   }
