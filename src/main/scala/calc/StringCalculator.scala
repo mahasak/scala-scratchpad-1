@@ -2,23 +2,25 @@ package calc
 
 
 class StringCalculator {
-  val DelimRE = """//(.+)\n.*""".r
+    val DelimMatchRE = """(?s)//.{1}\n.*""".r
+    val DelimExtractRE = """(?s)//(.{1})\n.*""".r
   
-  def add(numbers: String): Int = {
+  def add(input: String): Int = {
     implicit def toIntOverload(s: String) = new {
       def safeToInt: Int = if (s.matches("""^\d+$""")) s.toInt else 0
     }
     
-    def extractPrefix(s: String): String = {
-        val DelimRE(prefix) = s
-        prefix
+    def extractPrefix(s: String): (String, String) = {
+        val DelimExtractRE(prefix) = s
+        (prefix, s)
     }
 
-    val extraPrefix = DelimRE.findPrefixOf(numbers) match { 
-      case s: Some[String] => extractPrefix(numbers)
-      case _ => ""     
+    val (extraPrefix, numbers) = DelimMatchRE findPrefixOf input match { 
+        case Some(s) => extractPrefix(input)
+        case None => ("", input)     
     }  
+    
     // Fold-left operator
-    (0 /: numbers.split("""[,\n\$extraPrefix]+"""))((t, n) => t + n.safeToInt)
+    (0 /: numbers.split("""[,\n"""+ extraPrefix +"""]+"""))((t, n) => t + n.safeToInt)
   }
 }
