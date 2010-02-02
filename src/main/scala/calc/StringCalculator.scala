@@ -22,6 +22,6 @@ class StringCalculator {
     }  
     
     // Fold-left operator
-    (0 /: numbers.split("""[,\n"""+ extraPrefix +"""]+"""))((t, n) => t + n.safeToInt)
+    (0 /: numbers.split(",\\n"+extraPrefix+"]+"))((t, n) => t + n.safeToInt)
   }
 }
