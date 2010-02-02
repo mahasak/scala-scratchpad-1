@@ -2,12 +2,11 @@ package calc
 
 
 class StringCalculator {
-   val DelimRE = """(?s)//(.)\n.*""".r
+   private val DelimRE = """(?s)//(.)\n.*""".r
 
+   private def safeToInt(s: String): Int = if (s.matches("""^\d+$""")) s.toInt else 0
   
    def add(numbers: String): Int = {
-    def safeToInt(s: String): Int = if (s.matches("""^\d+$""")) s.toInt else 0
-    
     def getDelim(s: String): String = {
         val DelimRE(prefix) = s
         prefix
