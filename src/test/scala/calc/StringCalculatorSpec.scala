@@ -36,5 +36,20 @@ class StringCalculatorSpec extends Spec with ShouldMatchers {
       it("should work when ';' is specified and numbers are separated by ';'") { calc.add("//;\n1;10") should be (11) }
       it("should work when '+' is specified and numbers are separated by '+'") { calc.add("//+\n1+10") should be (11) }
     }
+
+    describe("when given one or more a negative numbers to add") {
+      it("should throw an exception with just one number") {
+        val thrown = evaluating { calc.add("-1") } should produce [IllegalArgumentException]
+        thrown.getMessage should be ("negatives not allowed: [-1]")
+      }
+      it("should throw an exception with two neagative numbers") {
+        val thrown = evaluating { calc.add("-1,-2") } should produce [IllegalArgumentException]
+        thrown.getMessage should be ("negatives not allowed: [-1,-2]")
+      }
+      it("should throw an exception with two neagative numbers and one positive") {
+        val thrown = evaluating { calc.add("10,-1,-2") } should produce [IllegalArgumentException]
+        thrown.getMessage should be ("negatives not allowed: [-1,-2]")
+      }
+    }
   }
 }
