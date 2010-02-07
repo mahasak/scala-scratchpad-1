@@ -42,14 +42,18 @@ class StringCalculatorSpec extends Spec with ShouldMatchers {
         val thrown = evaluating { calc.add("-1") } should produce [IllegalArgumentException]
         thrown.getMessage should be ("negatives not allowed: [-1]")
       }
-      it("should throw an exception with two neagative numbers") {
+      it("should throw an exception with two negative numbers") {
         val thrown = evaluating { calc.add("-1,-2") } should produce [IllegalArgumentException]
         thrown.getMessage should be ("negatives not allowed: [-1,-2]")
       }
-      it("should throw an exception with two neagative numbers and one positive") {
+      it("should throw an exception with two negative numbers and one positive") {
         val thrown = evaluating { calc.add("10,-1,-2") } should produce [IllegalArgumentException]
         thrown.getMessage should be ("negatives not allowed: [-1,-2]")
       }
+    }
+    
+    describe("Numbers bigger than 1000 should be ignored, so adding 2 + 1001  = 2") {
+      it("should add two numbers with one greater than 1000 and only return the smaller") {calc.add("2,1001") should be (2) }
     }
   }
 }
