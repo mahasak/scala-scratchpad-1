@@ -2,7 +2,7 @@ package calc
 
 
 class StringCalculator {
-   private val DelimRE = """(?s)//(.)\n.*""".r
+   private val DelimRE = """(?s)//(.+?)\n.*""".r
    private val MaxIntValue = 1000
 
    private def safeToInt(s: String): Int = if (s.matches("""^\-{0,1}\d+$""")) s.toInt else 0
