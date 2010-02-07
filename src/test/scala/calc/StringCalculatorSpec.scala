@@ -60,6 +60,7 @@ class StringCalculatorSpec extends Spec with ShouldMatchers {
     
     describe("allows delimiters of any length to be specified") {
       it("should use a delimiter of two characters when supplied") {calc.add("//**\n1**2") should be (3)} 
+      it("should use a delimiter of three characters when supplied") {calc.add("//***\n1***2***3") should be (6)} 
     }
   }
 }
