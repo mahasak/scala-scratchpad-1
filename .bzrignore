@@ -10,3 +10,4 @@ build
 .scala_dependencies
 ScalaScratchpad.iws
 ide-bin
+.classpath
