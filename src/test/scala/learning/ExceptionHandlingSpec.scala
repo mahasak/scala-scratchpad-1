@@ -11,16 +11,16 @@ import java.io.FileReader
 class ExceptionHandlingSpec extends Spec with ShouldMatchers {
     describe("Handling an exception with a catch block") {
       val isOpened: String =
-      try {
-          new FileReader("made-up-name")
-          "OPENED"
-      }
-      catch {
-          case ex: java.io.FileNotFoundException =>
-            "FNFE"
-          case ex: IllegalArgumentException =>
-            "IAE"
-      }
+	      try {
+	          new FileReader("made-up-name")
+	          "OPENED"
+	      }
+	      catch {
+	          case ex: java.io.FileNotFoundException =>
+	            "FNFE"
+	          case ex: IllegalArgumentException =>
+	            "IAE"
+	      }
       it("should have caught the appropriate exception") {
         isOpened should be ("FNFE")
       }
