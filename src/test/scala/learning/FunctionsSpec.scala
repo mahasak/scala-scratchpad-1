@@ -42,6 +42,23 @@ class FunctionsSpec extends Spec with ShouldMatchers {
           someNumbers.map(plusThree) should be (List(4,5,6))
       }
     }
+    describe("Currying is similar to partially applied functions") {
+      it("it allows replacement of an argument") {
+        def sum(a: Int)(b: Int) = a+b
+        val plusTwo = sum(2)_
+        plusTwo(3) should be (5)
+      }
+      it("it enables the use of '{...}' as an argument") {
+        def doStuff(a: Int)(stuff: Int => Int) = stuff(a)
+        // Curly-brace syntax only valid for a function with one argument
+        (doStuff(2){
+          _ * 2
+        }) should be (4)
+        (doStuff(2){
+            _ / 2
+        }) should be (1)
+      }
+    }
     describe("Closures are functions that make use of a free variable") {
       var free = 0
       val timesFree = (x: Int) => free * x
