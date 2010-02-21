@@ -51,16 +51,16 @@ class StringCalculatorSpec extends Spec with ShouldMatchers {
         thrown.getMessage should be ("negatives not allowed: [-1,-2]")
       }
     }
-    
+
     describe("when numbers are bigger than 1000, they should be ignored") {
       it("should add two numbers with one greater than 1000 and only return the smaller") {calc.add("2,1001") should be (2) }
       it("should add three numbers with one greater than 1000 and return the correct sum") {calc.add("2,1001,3") should be (5) }
       it("should return 0 if the only number is greater than 1000") {calc.add("1001") should be (0) }
     }
-    
+
     describe("allows delimiters of any length to be specified") {
-      it("should use a delimiter of two characters when supplied") {calc.add("//**\n1**2") should be (3)} 
-      it("should use a delimiter of three characters when supplied") {calc.add("//***\n1***2***3") should be (6)} 
+      it("should use a delimiter of two characters when supplied") {calc.add("//**\n1**2") should be (3)}
+      it("should use a delimiter of three characters when supplied") {calc.add("//***\n1***2***3") should be (6)}
     }
   }
 }
