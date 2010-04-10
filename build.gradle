@@ -1,6 +1,6 @@
-usePlugin 'scala'
-usePlugin 'eclipse'
-usePlugin 'project-reports'
+apply plugin: 'scala'
+apply plugin: 'eclipse'
+apply plugin: 'project-reports'
 
 scalaVersion = '2.7.7'
 scalatestVersion = '1.0'
@@ -40,7 +40,10 @@ haystack.dependsOn compileTestScala
 task spec << {
     runSpecs('learning')
 }
-spec.dependsOn compileTestScala
+task actors << {
+    runSpecs('actors')
+}
+actors.dependsOn compileTestScala
 
 def runSpecs(packageName) {
     ant.taskdef(name: 'scalatest', classname: 'org.scalatest.tools.ScalaTestAntTask', classpath: configurations.testCompile.asPath)

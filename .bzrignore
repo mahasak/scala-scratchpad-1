@@ -16,3 +16,4 @@ lib_managed
 project/boot
 target
 project/build/target
+.gradle
