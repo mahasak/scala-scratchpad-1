@@ -6,13 +6,22 @@ class LocAnalyser(path: String, walker: FilesystemWalker, accumulator: ResultAcc
   private var running = true
   
   def act() = {
-    val workerPool = List[LocCounter]()
     println("Here we go")
+    val workerPool = List[LocCounter]()
     walker ! (path, this)
     while(true) {
       receive {
         case "END" => {
           println("Winding up")
+          while(workerPool.exists {_.running}) {
+            println("Waiting for the workers to finish")
+            Thread.sleep(500)
+          }
+          accumulator ! "END"
+          while(accumulator processing) {
+            println("Waiting for the accumulator to finish")
+            Thread.sleep(500)
+          }
           running = false
         }
         case filename: String => {
@@ -28,8 +37,9 @@ class LocAnalyser(path: String, walker: FilesystemWalker, accumulator: ResultAcc
   
   def results(): Result = {
     while(running) {
-      Thread.sleep(1000)
+      Thread.sleep(500)
     }
+    println("Ready to return a result")
     accumulator.result
   }
 }
