@@ -1,0 +1,7 @@
+commit a874562e3998c4728ddafd1a0f61fc2d352ac0b7
+Author: Tony Baines <tony.baines.1@gmail.com>
+Date:   Tue Nov 30 20:34:34 2010 +0000
+
+    Cleanup
+
+ delete mode 100644 .bzrignore

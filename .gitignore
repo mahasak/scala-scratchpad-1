@@ -1,0 +1,19 @@
+bin
+.manager
+dist
+<<<<<<< TREE
+build/classes
+build/test
+=======
+build
+>>>>>>> MERGE-SOURCE
+.scala_dependencies
+ScalaScratchpad.iws
+ide-bin
+.classpath
+lib
+lib_managed
+project/boot
+target
+project/build/target
+.gradle
